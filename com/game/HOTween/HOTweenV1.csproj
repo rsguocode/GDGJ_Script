@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0009EA8-4894-4A39-9165-ED7A326F9F8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Holoville.HOTween</RootNamespace>
+    <AssemblyName>HOTween</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin.HOTweenV1\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin.HOTweenV1\HOTween.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin.HOTweenV1\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin.HOTweenV1\HOTween.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Micro_Debug|AnyCPU'">
+    <AssemblyName>HOTween</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin.HOTweenV1\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MICRO</DefineConstants>
+    <DocumentationFile>..\bin.HOTweenV1\HOTween.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Micro_Release|AnyCPU'">
+    <AssemblyName>HOTween</AssemblyName>
+    <OutputPath>..\bin.HOTweenV1\</OutputPath>
+    <DefineConstants>TRACE;MICRO</DefineConstants>
+    <DocumentationFile>..\bin.HOTweenV1\HOTween.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\_Design\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Axis.cs" />
+    <Compile Include="CallbackType.cs" />
+    <Compile Include="Core\ABSTweenComponent.cs" />
+    <Compile Include="Core\ABSTweenComponentParms.cs" />
+    <Compile Include="Core\EaseInfo.cs" />
+    <Compile Include="Core\Easing\EaseCurve.cs" />
+    <Compile Include="Core\Easing\Back.cs" />
+    <Compile Include="Core\Easing\Bounce.cs" />
+    <Compile Include="Core\Easing\Circ.cs" />
+    <Compile Include="Core\Easing\Cubic.cs" />
+    <Compile Include="Core\Easing\Elastic.cs" />
+    <Compile Include="Core\Easing\Expo.cs" />
+    <Compile Include="Core\Easing\Linear.cs" />
+    <Compile Include="Core\Easing\Quad.cs" />
+    <Compile Include="Core\Easing\Quart.cs" />
+    <Compile Include="Core\Easing\Quint.cs" />
+    <Compile Include="Core\Easing\Sine.cs" />
+    <Compile Include="Core\Easing\Strong.cs" />
+    <Compile Include="Core\FastDynamicMemberAccessor\FieldAccessor.cs" />
+    <Compile Include="Core\FastDynamicMemberAccessor\IMemberAccessor.cs" />
+    <Compile Include="Core\FastDynamicMemberAccessor\MemberAccessor.cs" />
+    <Compile Include="Core\FastDynamicMemberAccessor\MemberAccessorCacher.cs" />
+    <Compile Include="Core\FastDynamicMemberAccessor\MemberAccessorException.cs" />
+    <Compile Include="Core\FastDynamicMemberAccessor\PropertyAccessor.cs" />
+    <Compile Include="Core\OverwriteManager.cs" />
+    <Compile Include="Core\Path.cs" />
+    <Compile Include="Core\TweenDelegate.cs" />
+    <Compile Include="Core\TweenException.cs" />
+    <Compile Include="Core\TweenInfo.cs" />
+    <Compile Include="Core\TweenWarning.cs" />
+    <Compile Include="Core\Utils.cs" />
+    <Compile Include="EaseType.cs" />
+    <Compile Include="HOTween.cs" />
+    <Compile Include="IHOTweenComponent.cs" />
+    <Compile Include="LoopType.cs" />
+    <Compile Include="PathType.cs" />
+    <Compile Include="Plugins\Core\ABSTweenPlugin.cs" />
+    <Compile Include="Plugins\Core\PlugColor.cs" />
+    <Compile Include="Plugins\Core\PlugColor32.cs" />
+    <Compile Include="Plugins\Core\PlugFloat.cs" />
+    <Compile Include="Plugins\Core\PlugRect.cs" />
+    <Compile Include="Plugins\Core\PlugVector2.cs" />
+    <Compile Include="Plugins\Core\PlugVector3.cs" />
+    <Compile Include="Plugins\Core\PlugVector4.cs" />
+    <Compile Include="Plugins\PlugInt.cs" />
+    <Compile Include="Plugins\PlugQuaternion.cs" />
+    <Compile Include="Plugins\PlugSetColor.cs" />
+    <Compile Include="Plugins\PlugSetFloat.cs" />
+    <Compile Include="Plugins\PlugString.cs" />
+    <Compile Include="Plugins\PlugVector3Path.cs" />
+    <Compile Include="Plugins\PlugVector3X.cs" />
+    <Compile Include="Plugins\PlugVector3Y.cs" />
+    <Compile Include="Plugins\PlugVector3Z.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sequence.cs" />
+    <Compile Include="SequenceParms.cs" />
+    <Compile Include="Tweener.cs" />
+    <Compile Include="TweenEvent.cs" />
+    <Compile Include="TweenParms.cs" />
+    <Compile Include="TweenType.cs" />
+    <Compile Include="TweenVar.cs" />
+    <Compile Include="UpdateType.cs" />
+    <Compile Include="WarningLevel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set BinDir=bin.Global\HOTween
+set DestinationDir=$(SolutionDir)..\%25BinDir%25
+set BinDirNoMeta=bin.Global_no_meta\HOTween
+set DestinationDirNoMeta=$(SolutionDir)..\%25BinDirNoMeta%25
+
+echo Deleting TMPs...
+DEL $(TargetDir)\*.tmp
+
+CD $(TargetDir)
+echo Converting PDB to MDB and deleting PDB...
+"c:\Program Files\_Design\Unity 4\Editor\Data\MonoBleedingEdge\lib\mono\4.0\pdb2mdb.exe" $(TargetFileName)
+DEL $(TargetName).pdb
+
+echo Exporting Assembly to %25DestinationDir%25
+echo Copying files to Destination...
+echo f | xcopy "$(ProjectDir)..\bin.HOTweenV1" %25DestinationDir%25 /Y /I /E
+
+echo Exporting Assembly to %25DestinationDirNoMeta%25
+echo f | xcopy "$(ProjectDir)..\bin.HOTweenV1" %25DestinationDirNoMeta%25 /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
