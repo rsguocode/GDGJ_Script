@@ -92,6 +92,7 @@ namespace com.u3d.bases.controller
         public override void AddAttackList(ActionVo vo, bool isPush = false)
         {
             var playerVo = MeController.Me.GetVo() as PlayerVo;
+			playerVo.CurHp = DangJiTester.playerVoCurHp; // grsyh
             if (playerVo != null && (playerVo.CurHp <= 0 && vo.ActionType != Actions.DEATH)) return;
 
             if (AttackList == null) AttackList = new List<ActionVo>();

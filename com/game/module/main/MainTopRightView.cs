@@ -135,6 +135,10 @@ namespace com.game.module.main
             }
             else
             {
+				GameObject loginObj = GameObject.Find("driver/uiroot(Clone)/viewtree/LoginView(Clone)");
+				if (loginObj)
+					loginObj.SetActive(false);
+				/*
                 TaskVo mainTaskVo = TaskModel.Instance.CurrentMainTaskVo;
                 int mainTaskNum = (int) mainTaskVo.TaskId*10 + TaskUtil.GetTaskTriggerType(mainTaskVo);
                 List<SysGuideVo> guideVoList = BaseDataMgr.instance.GetGuideVoList();
@@ -155,7 +159,7 @@ namespace com.game.module.main
                             _openedButtons.Add(_buttonGuideRelation[guideId]);
                         }
                     }
-                }
+                }*/
             }
         }
 
@@ -410,6 +414,7 @@ namespace com.game.module.main
         /// </summary>
         private void UpdateTaskGuideStatu()
         {
+			/* grsyh
             TaskVo taskvo = TaskModel.Instance.CurrentMainTaskVo;
             vp_Timer.CancelAll("ShowTaskGuide");
             if (GuideModel.Instance.IsShowGuide)
@@ -423,6 +428,7 @@ namespace com.game.module.main
                     vp_Timer.In(0.5f, ShowTaskGuide);
                 }
             }
+*/
         }
 
         private void ShowTaskGuide()

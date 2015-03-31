@@ -39,6 +39,7 @@ namespace com.game.vo
             {
                 if (_SysRoleBaseInfoVo == null)
                 {
+					job = DangJiTester.job; // grsyh
                     _SysRoleBaseInfoVo = BaseDataMgr.instance.GetSysRoleBaseInfo(job);
                 }
                 return _SysRoleBaseInfoVo;

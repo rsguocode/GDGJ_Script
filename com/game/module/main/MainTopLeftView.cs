@@ -316,6 +316,7 @@ namespace com.game.module.main
 		//更新领取奖励按钮小红点状态
 		private void UpdateGetAwardInfo()
 		{
+			/* grsyh
 			int day    = Singleton<LoginAwardMode>.Instance.dayInfo.day;
 			int status = Singleton<LoginAwardMode>.Instance.dayInfo.status;
 			bool isShowTips = false;
@@ -324,6 +325,7 @@ namespace com.game.module.main
 				isShowTips = true;
 			}
 			btn_dljl.FindInChild<UISprite>("tips").SetActive(isShowTips);
+			*/
 		}
     }
 }

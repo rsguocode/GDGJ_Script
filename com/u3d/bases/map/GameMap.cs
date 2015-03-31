@@ -32,8 +32,10 @@ namespace com.u3d.bases.map
             if (_me != null) return;
             vo.Type = DisplayType.ROLE;
             _me = new MeDisplay();
-            vo.ClothUrl = "Model/Role/" + vo.SysRoleBaseInfo.Model + "/Model/" + vo.SysRoleBaseInfo.Model +
-                          ".assetbundle";
+            //vo.ClothUrl = "Model/Role/" + vo.SysRoleBaseInfo.Model + "/Model/" + vo.SysRoleBaseInfo.Model +
+            //              ".assetbundle";
+			vo.ClothUrl = "Model/Role/" + "100001/Model/" + "100001" +
+				".assetbundle";
             _me.SetVo(vo);
             if (_playerList.IndexOf(_me) == -1) _playerList.Add(_me);
             Object.DontDestroyOnLoad(_me.GoBase);

@@ -63,7 +63,7 @@ namespace Com.Game.Module.Manager
             //LoadAtlas("UI/Icon/SmeltIcon/SmeltIcon.assetbundle", "SmeltIcon");
 			LoadAtlas("UI/Icon/GemIcon/GemIcon.assetbundle" , "GemIcon");//宝石图标
 			LoadAtlas("UI/Icon/MonsterHeadIcon/MonsterHeadAtlas.assetbundle", "MonsterHeadAtlas");  //怪物头像图标
-            LoadAtlas("UI/Common/common.assetbundle", "common");
+            //LoadAtlas("UI/Common/common.assetbundle", "common"); grsyh
             LoadAtlas("UI/Icon/Header/Header.assetbundle", AtlasManager.Header);
 			LoadAtlas("UI/Icon/ChatIcon/ChatAtlas.assetbundle", AtlasManager.Chat);
         }

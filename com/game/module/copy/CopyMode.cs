@@ -64,10 +64,12 @@ namespace Com.Game.Module.Copy
 		//副本继续请求
 		public void ResumeCopy()
 		{
+			/* grsyh
 			Log.info(this, "发送8-7给服务器继续副本");
 			MemoryStream msdata = new MemoryStream ();
 			Module_8.write_8_7 (msdata);
 			AppNet.gameNet.send(msdata, 8, 7);
+			*/
 		}
 
 

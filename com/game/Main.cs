@@ -331,6 +331,11 @@ namespace com.game
 
         private void Update()
         {
+			if (!isInit)  // grsyh
+			{
+				initApp ();
+			}
+
             if (connected && !isInit)
             {
                 connectTime = Time.time;

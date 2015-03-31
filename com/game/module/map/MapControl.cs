@@ -127,16 +127,18 @@ namespace com.game.module.map
 
         /**场景信息请求返回**/
 
-        private void Fun_4_2(INetData data)
+        public void Fun_4_2(INetData data)
         {
             Log.debug(this, "-Fun_4_2 场景信息请求返回成功 ");
             if (Singleton<MapMode>.Instance.IsFirstInToScene)
             {
                 AppFacde.instance.InitAfterIntoScene(); //执行第一次进入场景的初始化工作
             }
-            var mapSightMsg = new MapSightMsg_4_2();
-            mapSightMsg.read(data.GetMemoryStream());
-            uint mapId = mapSightMsg.mapId;
+            
+
+			var mapSightMsg = new MapSightMsg_4_2();
+            //mapSightMsg.read(data.GetMemoryStream());
+			uint mapId = DangJiTester.copyId; //mapSightMsg.mapId; grsyh
             Log.info(this,
                 "-Fun_4_2() 本角色：" + MeVo.instance.Id + " 切换场景，从：" + AppMap.Instance.mapParser.MapId + "到：" + mapId);
             Log.info(this, "-Fun_4_2() 更新玩家位置信息");
@@ -149,7 +151,7 @@ namespace com.game.module.map
             {
                 MeVo.instance.X = MeVo.instance.toX;
             }
-            MeVo.instance.mapId = mapSightMsg.mapId;
+			MeVo.instance.mapId = mapId; //mapSightMsg.mapId; grsyh
             Log.info(this, "-Fun_4_2() 开始切换地图");
             MapMode.CUR_MAP_PHASE = mapSightMsg.phase == 0 ? (ushort) 1 : mapSightMsg.phase;
             //不管成败，结束挂机
@@ -217,13 +219,19 @@ namespace com.game.module.map
         ///     怪物进入场景
         /// </summary>
         /// <param name="data">Data.</param>
-        private void Fun_4_7(INetData data)
+        public void Fun_4_7(INetData data)
         {
-            var mapMonEnterMsg = new MapMonEnterMsg_4_7();
-            mapMonEnterMsg.read(data.GetMemoryStream());
+            //var mapMonEnterMsg = new MapMonEnterMsg_4_7();
+            //mapMonEnterMsg.read(data.GetMemoryStream());
+			//AddMonList(mapMonEnterMsg.mons);
 
-            AddMonList(mapMonEnterMsg.mons);
-        }
+			PMapMon mon = DangJiTester.SetMonsterInfo();
+
+			List<PMapMon> lspmapmon = new List<PMapMon> ();
+			lspmapmon.Add (mon);
+
+			AddMonList (lspmapmon); // grsyh
+		}
 
         /// <summary>
         ///     添加怪物列表到怪物管理中
@@ -231,6 +239,9 @@ namespace com.game.module.map
         /// <param name="monList">Mon list.</param>
         private void AddMonList(List<PMapMon> monList)
         {
+			Singleton<MapMode>.Instance.AddMonInMap(monList); // grsyh
+			return;
+
             if (MapMode.WaitRefreshMonster)
             {
                 Log.info(this, "暂停刷怪，新加入怪物暂且加入缓存，场景切换完毕后再添加");
@@ -657,6 +668,9 @@ namespace com.game.module.map
 			}
 			Singleton<MapMode>.Instance.IsFirstInToScene = false;
             Singleton<StartLoadingView>.Instance.CloseView();
+
+			Debug.Log ("**************begin to call Fun_4_7 ();");
+			Fun_4_7 (null); // grsyh
         }
 
         //

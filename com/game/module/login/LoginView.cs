@@ -11,6 +11,7 @@ using com.game.start;
 using com.game.utils;
 using com.u3d.bases.debug;
 using UnityEngine;
+using com.game.module.map;
 
 namespace com.game.module.login
 {
@@ -335,6 +336,9 @@ namespace com.game.module.login
         /// <param name="go">登录按钮</param>
         private void LoginOnClick(GameObject go)
         {
+			Singleton<MapControl>.Instance.Fun_4_2 (null);// grsyh
+			return;
+
             if (Info == null)
             {
                 MessageManager.Show("无服务器信息");
