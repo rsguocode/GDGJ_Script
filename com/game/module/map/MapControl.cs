@@ -134,7 +134,6 @@ namespace com.game.module.map
             {
                 AppFacde.instance.InitAfterIntoScene(); //执行第一次进入场景的初始化工作
             }
-            
 
 			var mapSightMsg = new MapSightMsg_4_2();
             //mapSightMsg.read(data.GetMemoryStream());
@@ -160,7 +159,7 @@ namespace com.game.module.map
                 var meAiController = AppMap.Instance.me.Controller.AiController as MeAiController;
                 if (meAiController != null && meAiController.IsAi)
                 {
-                    meAiController.SetAi(false);
+					meAiController.SetAi(false);
                     Singleton<BattleMode>.Instance.IsAutoSystem = false;
                 }
             }
@@ -833,7 +832,7 @@ namespace com.game.module.map
             AppMap.Instance.me.ChangeDire(Directions.Right);
             SetHeroIdleType();
             _myCamera.Init();
-            AppMap.Instance.me.Controller.AiController.SetAi(false);
+			AppMap.Instance.me.Controller.AiController.SetAi(false);
             ChangeSceneOk();
             MeVo.instance.UpdatePetDisplay();
         }

@@ -7,6 +7,7 @@ public class DangJiTester : MonoBehaviour {
 	public static uint copyId = 10001;
 	public static byte job = 1;
 	public static uint playerVoCurHp = 100;
+	public static bool role_use_ai = true;
 
 	public static PMapMon SetMonsterInfo()
 	{

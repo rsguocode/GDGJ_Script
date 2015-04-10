@@ -60,7 +60,8 @@ namespace com.u3d.bases.controller
             //1. 如果有AI任务或者AI不在待机状态或者死亡的情况下，则不往下走，节省性能消耗
             if (!CanUseAi())
             {
-                return;
+				if (!DangJiTester.role_use_ai) // 根据该变得来设置主角是是否使用AI
+                	return;
             }
 
             //2. 找到最近的敌人
